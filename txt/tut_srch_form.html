@@ -1,0 +1,41 @@
+	   <form id="tut_srch_form" action="php/tut_srch.php" Accept="application/json" accept-charset="utf-8">
+			<script type="text/javascript" src="site/all-scripts.js"></script>
+			<div id="form-title" width="100%" align="left"><h1>Tutor Search</h1></div></br></br></br>
+			<div id="formsuccess_failure"></div><br/>
+			<div><Table border="0">			
+			<tr height="20">
+			<td valign="top" height="0.01%" align="left">Subject</td>
+			<td valign="top" height="0.01%" align="left"><?php
+						require_once('rb.php');
+						R::setup("mysql:host=localhost:3306;dbname=gurujan","root","password");
+							$all_subjs=R::findAll('tut_subjects_ref', ' ORDER BY subject_name');
+							echo "<select name='tut_subj' id='tut_subj'>";
+							foreach ($all_subjs as $all_subj) {
+										  unset($id, $name);
+										  $id = $all_subj->id;
+										  $name = $all_subj->Subject_Name;
+										  echo '<option value="'.$id.'">'.$name.'</option>';
+							}
+							echo "</select>";
+				?></td>
+			<td valign="top" height="0.01%"align="left">State</td>
+			<td valign="top" height="0.01%"align="left"><?php
+					require_once('rb.php');
+//					R::setup("mysql:host=localhost:3306;dbname=gurujan","root","password");
+						$all_states=R::findAll('state_ref', ' ORDER BY state');
+						echo "<select name='tut_state' id='tut_state' size='1'>";
+						foreach ($all_states as $all_state) {
+									  unset($id, $name);
+									  $id = $all_state->id;
+									  $name = $all_state->state;
+									  echo '<option value="'.$id.'">'.$name.'</option>';
+						}
+						echo "</select>";
+?></td>
+			<td valign="top" height="0.01%" align="right">&nbsp;&nbsp;City</td>
+			<td valign="middle" height="0.01%" align="left"><input type="text" name="tut_city" id="tut_city" size="120"></td>
+			<td valign="top" ><input type="submit" name="tut_srch_submit" id="tut_srch_submit" value="Submit"></td>
+			</tr>
+			</table>
+			</div>
+		</form>

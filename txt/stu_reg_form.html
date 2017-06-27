@@ -1,0 +1,76 @@
+<form id="stu_reg_form" action="site/cr_stu_reg.php" Accept="application/json" accept-charset="utf-8">
+	<script type="text/javascript" src="site/all-scripts.js"></script>
+
+	<div id="form-title" width="100%" align="left"><h1>Student Register</h1></div><br/><br/><br/>
+	<div id="formsuccess_failure"></div><br/>
+	<table border="0" width="100%">
+		<tr>
+			<td valign="top"><label>First Name*</label></td>
+			<td valign="middle">:<input type="text" name="stu_reg_name" id="stu_reg_name"><br/></td>
+		</tr>
+		<tr>
+			<td valign="top">
+			<label>Last Name</label></td>
+			<td valign="middle">:<input type="text" name="stu_reg_lname" id="stu_reg_lname"><br/></td>
+		</tr>
+		<tr>
+			<td valign="top"><label>Login ID*</label></td>
+			<td valign="middle">:<input type="text" name="stu_login_id" id="stu_login_id"><br/></td>
+		</tr>
+		<tr>
+			<td valign="top"><label>Password*</label></td>
+			<td valign="middle">:<input type="text" name="stu_password" id="stu_password"><br/></td>
+		</tr>
+		<tr>
+			<td valign="top"><label>Phone*</label></td>
+			<td valign="middle">:<input type="text" name="stu_phone" id="stu_phone"><br/></td>
+		</tr>
+		<tr>
+			<td valign="top"><label>Email*</label></td>
+			<td valign="middle">:<input type="text" name="stu_email" id="stu_email"><br/></td>
+		</tr>
+		<tr>
+			<td valign="top"><label>Subjects</label></td>
+			<td>:<?php
+				require_once('rb.php');
+				R::setup("mysql:host=localhost:3306;dbname=rama","root","password");
+					$all_subjs=R::findAll('tut_subjects_ref', ' ORDER BY subject_name');
+					echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select multiple name='stu_subj' id='stu_subj'>";
+					foreach ($all_subjs as $all_subj) {
+						  unset($id, $name);
+						  $id = $all_subj->id;
+						  $name = $all_subj->Subject_Name;
+						  echo '<option value="'.$id.'">'.$name.'</option>';
+					}
+					echo "</select>";
+				?></td>
+		</tr>
+		<tr>
+			<td valign="top"><label>State*</label></td>
+			<td>:<?php
+/*				require_once('rb.php');
+				R::setup("mysql:host=localhost:3306;dbname=rama","root","password"); */
+				$all_states=R::findAll('state_ref', ' ORDER BY state');
+				echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select name='tut_state' id='tut_state' size='4'>";
+				foreach ($all_states as $all_state) {
+							  unset($id, $name);
+							  $id = $all_state->id;
+							  $name = $all_state->state;
+							  echo '<option value="'.$id.'">'.$name.'</option>';
+				}
+				echo "</select>";?>
+			</td>
+		</tr>
+		<tr>
+			<td><label>City</label></td><td>:<input type="text" name="stu_city" id="stu_city"></td>
+		</tr>
+		<tr>
+			<td><label>Offered Services</label></td><td>:<input type="checkbox" name="service_Home" id="service_Home" value="true">Home Tutions&nbsp;&nbsp;<input type="checkbox" name="service_Online" id="service_Online" value="true">Online</br>&nbsp;<input type="checkbox" name="service_Coaching" id="service_Coaching" value="true">Coaching Classes<br/><br/>
+			</td>
+		</tr>				
+		<tr>
+			<td></td><td  valign="top" align="middle">
+				<input type="image" src="site/img/submit.png" name="stu_reg_submit" id ="stu_reg_submit">
+		</tr>
+	</table>
+</form>

@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<link href="site.css" rel="stylesheet" type="text/css" media="screen" />
+		<script language="javascript" type="text/javascript" src="site/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="site/all-scripts.js"></script>
+	</head>
+	<body>
+	   <form id="contactform" action="php/contact.php" method="post" Accept="application/json" accept-charset="utf-8">
+			</br>
+			<div id="form-title" width="100%" ><h2>Please enter your Contact Details</h2></div><br/>
+			<label>Name</label><input type="text" name="name" placeholder="Name" id="name"></input><br/>
+			<label>Address</label><input type="text" name="address" id="address"></input><br/>
+			<label>Email</label><input type="text" name="email" id="email"></input><br/>
+			<label>Phone Number</label><input type="text" name="phone" id="phone"></input><br/>
+			<label>Message</label><textarea name="message" id="message" type="text"></textarea><br/>
+			<input type="button" id="submit" name="formsubmit" value="Submit"> </input>
+		</form>
+	</body>
+</html>

@@ -1,0 +1,20 @@
+{
+  "name": "gurujan",
+  "version": "1.0.0",
+  "description": "Sample Coding",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^4.15.3",
+    "mongodb": "~2.0"
+  },
+  "author": "Rama <rbahugun@yahoo.com> (http://rbahugun.com)",
+  "license": "ISC",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "gurujan"
+  }
+}

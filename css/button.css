@@ -1,0 +1,13 @@
+input[type="button"]
+{
+	border-color: #FFFFFF;
+	background-color:yellow;
+	font-family: 'Curlz MT';
+	font-size: 50px;
+	font-weight: Bold;
+width:400px;
+margin-left:35px;
+display:block;
+ border-bottom: 4px solid #543E40;
+ border-right: 4px solid #543E40;
+}

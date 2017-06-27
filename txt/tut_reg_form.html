@@ -1,0 +1,81 @@
+<form id="tut_reg_form" method="post" action="site/cr_tut_reg.php" Accept="application/json" accept-charset="utf-8">
+	<script type="text/javascript" src="site/all-scripts.js"></script>
+		
+	<div id="form-title" width="100%" align="left"><h1>Tutor Register</h1></div><br/><br/><br/>
+	<div id="formsuccess_failure"></div><br/>
+	<table border="0" width="100%">
+		<tr>
+			<td valign="top"><label>First Name*</label></td>
+			<td valign="middle">:<input type="text" name="tut_reg_name" id="tut_reg_name"><br/></td>
+		</tr>
+		<tr>
+			<td valign="top">
+			<label>Last Name</label></td>
+			<td valign="middle">:<input type="text" name="tut_reg_lname" id="tut_reg_lname"><br/></td>
+		</tr>
+		<tr>
+			<td valign="top">
+			<label>Login ID*<h2>(Email id)</h2></label></td> <td valign="middle">:<input type="text" name="tut_login_id" id="tut_login_id"><br/></td>
+		</tr>
+		<tr>
+			<td valign="top">
+			<label>Password*</label></td><td valign="middle">:<input type="text" name="tut_password" id="tut_password"><br/></td>
+		</tr>
+		<tr>
+			<td valign="top">
+			<label>Phone*</label></td><td valign="middle">:<input type="text" name="tut_phone" id="tut_phone"><br/></td>
+		</tr>
+		<tr>
+			<td valign="top">
+			<label>Email*</label></td><td valign="middle">:<input type="text" name="tut_email" id="tut_email"><br/></td>
+		</tr>
+		<tr>
+			<td valign="top">
+			<label>Highest Qualification</label></td><td valign="middle">:<input type="text" name="tut_qualification" id="tut_qualification"><br/></td>
+		</tr>
+		<tr>
+			<td valign="top"><label>Subjects</label></td><td>:<?php
+					require_once('rb.php');
+					R::setup("mysql:host=localhost:3306;dbname=gurujan","root","password");
+						$all_subjs=R::findAll('tut_subjects_ref', ' ORDER BY subject_name');
+						echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select multiple name='tut_subj' id='tut_subj'>";
+						foreach ($all_subjs as $all_subj) {
+									  unset($id, $name);
+									  $id = $all_subj->id;
+									  $name = $all_subj->Subject_Name;
+									  echo '<option value="'.$id.'">'.$name.'</option>';
+						}
+						echo "</select>";
+			?></td>
+		</tr>
+		<tr>
+			<td valign="top"><label>State*</label></td><td>:<?php
+/*						require_once('rb.php');
+						R::setup("mysql:host=localhost:3306;dbname=gurujan","root","password");*/
+							$all_states=R::findAll('state_ref', ' ORDER BY state');
+							echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select name='tut_state' id='tut_state' size='4'>";
+							foreach ($all_states as $all_state) {
+										  unset($id, $name);
+										  $id = $all_state->id;
+										  $name = $all_state->state;
+										  echo '<option value="'.$id.'">'.$name.'</option>';
+							}
+							echo "</select>";?>
+			
+			</td>
+		<tr>
+			<td><label>City</label></td><td>:<input type="text" name="tut_city" id="tut_city"></td>
+		</tr>
+		<tr>
+			<td><label>Offered Services</label></td><td>:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="service_Home" id="service_Home" value="true">Home Tutions&nbsp;&nbsp;<input type="checkbox" name="service_Online" id="service_Online" value="true">Online</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="service_Coaching" id="service_Coaching" value="true">Coaching Classes<br/><br/>			
+			</td>
+		</tr>
+		<tr>
+			<td><label>Tools (for online)</label></td><td>:<input type="text" name="tut_tools" id="tut_tools"></td>
+		</tr>
+		<tr>
+			<td></td><td  valign="top" align="middle">
+			<input type="image" src="site/img/submit.png" name="tut_reg_submit" id ="tut_reg_submit"><input type="image" src="site/img/Cancel_G.png" name="tut_reg_submit" id ="tut_reg_submit"><br/></td>
+		</tr>
+	</table>
+</form>

@@ -1,0 +1,5 @@
+<left-Body>
+	<h3>Left Testimonials</h3>
+	<p>This is first testimonial.<p>
+	<p>This is second testimonial.<p>
+</left-Body>

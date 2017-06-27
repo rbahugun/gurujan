@@ -1,0 +1,180 @@
+ul, li, html
+{
+padding:0; margin:0;
+list-style: none;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background: #FFFFFF;
+	font-family: 'Arial', sans-serif;
+	font-size: 16px;
+	font-weight: normal;
+	color: #107710;
+}
+
+h1, , h3 {
+	margin: 0px;
+	padding: 0px;
+	letter-spacing: 2px;
+	font-family: 'Arvo', serif;
+	font-weight: normal;
+	color: #107710;
+}
+
+h1 {
+	font-size: 25px;
+}
+
+ {
+	font-size: 22px;
+}
+
+h3 {
+	font-size: 20px;
+}
+
+#page {
+	overflow: hidden;
+	width: 1000px;
+	margin: 0px auto;
+	padding: 20px 0px 0px 0px;
+}
+
+#body-wrapper {
+width:100%;
+	overflow: hidden;
+	padding: 0px 0px 0px 0px;
+	margin: 0px 0px 0px 0px;
+	height: auto;
+    float: left;
+	background: #BBBBBB;
+	border-radius: 4px;
+	position: relative;
+	z-index:-1;
+}
+
+/* Header */
+#logo {
+	padding: 0px 0px 0px 32px;
+	margin: 0px 0px 0px 0px;
+	float: left;
+	width: 20%;
+	height:125px;
+	background-image: cover;
+}
+
+#banner-wrapper {
+	overflow: visible;
+	padding: 0px 0px 0px 0px;
+	margin: 0px 0px 0px 0px;
+    float: right;
+	height: 125px;
+	width: 106.5%;
+	border-radius: 4px;
+	background: linear-gradient(#008080 20%, #9ACD00 80%);
+	background-color: linear-gradient(#008080 20%, #9ACD00 80%);
+	position: relative;
+}
+
+#header{
+	width: 76%;
+	height:125px;
+	text-decoration: none;
+	float: right;
+}
+
+#header-top{
+	text-align: center;
+	font-family: 'Arial', serif;
+	font-size: 25px;
+	font-weight: normal;
+	width: auto;
+	height:78%;
+	}
+
+#header-bottom{
+	height:22%;
+	width: 100%;
+	padding: 0px 0px 20px 0px;
+	margin: 0px 0px 0px 0px;
+}
+
+/* Menu */
+
+ul#nav{
+width: 75%;
+float: left;
+font-size: 18px;
+border-radius: 10px;  
+position: relative;
+display: inline-table;
+}
+
+ul#nav li
+{
+float: left;
+width: 6em;
+}
+
+ul#nav li:hover
+{
+background-color: #558B22;
+}
+ul#nav li a
+{
+float:left;
+display: block;
+width: 6em;
+color: #105510;
+text-decoration:none;
+}
+
+ul#nav li:hover ul 
+{
+display: block;
+position :relative;
+}
+
+ul#nav ul {
+display: none;
+}
+
+/* Page */
+#left-body
+{
+	float: left;
+	height:100%;
+	width: 19%;
+	border-radius: 4px;
+	background: #F0E68C;
+	padding: 0.5% 0.5% 0.5% 0.5%;
+	margin: 0px 0px auto 0px;
+}
+
+#center-body
+{
+	float: left;
+	height:100%;
+	width: 59%;
+	border-radius: 4px;
+	background: #98FB98;
+	background: linear-gradient(#98FBF8 0%, #98FB98 100%);
+	background-color: linear-gradient(#98FBF8 0%, #98FB98 100%);
+	padding: 0.5% 0.5% 0.5% 0.5%;
+	margin: 0px 0px auto 0px;
+}
+
+#right-body
+{
+	float: left;
+	height:100%;
+	width: 19%;
+	border-radius: 4px;
+	background: #3CB371;
+	background: linear-gradient(#3CB3B1 0%, #3CB371 100%);
+	background-color: linear-gradient(#3CB3B1 0%, #3CB371 100%);
+	padding: 0.5% 0.5% 0.5% 0.5%;
+	margin: 0px 0px auto 0px;
+}
