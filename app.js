@@ -29,44 +29,5 @@ httpServer = http.createServer(function(req, resp){
 	    			resp.end();
 	    		} );
 		
-//	    fileStream.pipe(resp);
-//		resp.writeHead(200,{"Content-Type":"text/html"});
-//		resp.write("<html><body>Hello World</body></html>");
 	}).listen(port, "127.0.0.1");
-
-//switch(req.url) {
-//		case "contact": contact.method();
-//			break;
-//		case "faq":
-//			break;
-//		case "login":
-//			break;
-//		case "tut-reg":
-//			break;
-//		case "stu-reg":
-//			break;
-//		case "tut-srch":
-//			break;
-//		case "stu-srch":
-//			break;
-//		default:
-//			break;
-//	}	
-//
-//function method (req.method){
-//	
-//	switch( req.method){
-//		case "GET":  
-//			break;
-//		case "POST": this.post();
-//			break;
-//		case "DELETE":
-//			break;
-//		case "UPDATE":
-//			break;
-//		default:
-//			break;
-//	}
-//}
-//
 
